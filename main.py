@@ -3,7 +3,6 @@ import json
 from datetime import date, timedelta
 import pandas as pd
 import streamlit as st
-from PIL import Image
 import os
 
 class LiturgicalCalendar:
@@ -64,10 +63,6 @@ class LiturgicalCalendar:
 if __name__ == '__main__':
     st.header("Liturgical Calendar")
     st.write("Api: http://calapi.inadiutorium.cz/")
-    st.write(f"Working directory {os.getcwd()}")
-    img_file_name = 'temp_img.jpg'
-    image = Image.open(img_file_name)
-    st.image(image)
     calendar_holder = st.date_input(label="choose date",value=date.today())
     jesus = LiturgicalCalendar(today=calendar_holder)
     st.header("Feasts this week")
